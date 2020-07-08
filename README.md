@@ -1,6 +1,6 @@
 # Generated Web3j-OpenAPI demo project
 
-This project was generated using the command:
+This project was generated using the [Epirus-CLI](https://github.com/epirus-io/epirus-cli) as follows:
 ```
 epirus openapi generate --package-name com.gen.app --name=HelloWorldApp --abi=helloworld.abi --bin=helloworld.bin
 ```
