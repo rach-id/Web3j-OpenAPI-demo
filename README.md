@@ -71,7 +71,7 @@ A configuration file is similar to the following:
 web3j.openapi.private.key={your private key}
 web3j.openapi.port=9090
 ```
-##### Directly from the CLI
+#### Directly from the CLI
 The usual way:  `--private-key {your private key}`
 
 Then, we are ready to run the project:
@@ -80,12 +80,12 @@ Then, we are ready to run the project:
 We can run the project directly : `./gradlew run`
 However, specifying the runtime parameters in this case from the CLI is tricky. For this case, either use environment variables or Default Configuration file config as stated above.
 
-##### Run the FatJAR
+#### Run the FatJAR
 ```ssh
 $ java -jar server/build/libs/HelloWorldProject-server-all.jar [arguments]
 ```
 
-##### Run the distributions binary
+#### Run the distributions binary
 ```ssh
 $ ./server/build/install/HelloWorldProject-server/bin/HelloWorldProject-server
 ```
