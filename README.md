@@ -4,6 +4,21 @@ This project was generated using the command:
 ```
 epirus openapi generate --package-name com.gen.app --name=HelloWorldApp --abi=helloworld.abi --bin=helloworld.bin
 ```
+On the following contract:
+
+```
+pragma solidity ^0.6.0;
+
+contract HelloWorld {
+ function hello() public pure returns (string memory) {
+   return 'Hello Web3j-OpenAPI';
+ }
+ 
+ function sayIt(string memory greeting) public pure returns (string memory) {
+   return greeting;
+ }
+}
+```
 
 ## How to build
 
@@ -22,9 +37,9 @@ And then, you have two possibilities:
 `./gradlew installDist` Which you can find also in the `server/build/install/HelloWorldProject-server/bin` folder.
 
 ## Configurations
-In all cases, we need to specify the runtime configuration. For example, the private key or wallet file for the signing, the node endpoint to connect to, etc.
+In all cases, we need to specify the runtime configuration. For example, the `private key` or `wallet file` for the signing, the `node endpoint` to connect to, etc.
 
-To see the available options, try to run the distributions or the JAR with the help flag. You will see something like:
+To see the available options, try to run the `distributions` or the `JAR` with the `--help` flag. You will see something like:
 
 
 To specify these parameters, we have three ways:
