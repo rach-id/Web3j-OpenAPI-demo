@@ -1,4 +1,4 @@
-# Generated openapi demo project
+# Generated Web3j-OpenAPI demo project
 
 This project was generated using the command:
 ```
