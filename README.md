@@ -41,6 +41,7 @@ In all cases, we need to specify the runtime configuration. For example, the `pr
 
 To see the available options, try to run the `distributions` or the `JAR` with the `--help` flag. You will see something like:
 
+![](https://raw.githubusercontent.com/SweeXordious/Web3j-OpenAPI-demo/master/img/Server_help.png)
 
 To specify these parameters, we have three ways:
 
@@ -91,4 +92,5 @@ $ ./server/build/install/HelloWorldProject-server/bin/HelloWorldProject-server
 
 You should be able to run the server and see the following:
 
+![](https://raw.githubusercontent.com/SweeXordious/Web3j-OpenAPI-demo/master/img/Server_logs.png)
 
