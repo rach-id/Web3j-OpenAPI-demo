@@ -87,7 +87,7 @@ $ java -jar server/build/libs/HelloWorldProject-server-all.jar [arguments]
 
 #### Run the distributions binary
 ```ssh
-$ ./server/build/install/HelloWorldProject-server/bin/HelloWorldProject-server
+$ ./server/build/install/HelloWorldProject-server/bin/HelloWorldProject-server [arguments]
 ```
 
 You should be able to run the server and see the following:
