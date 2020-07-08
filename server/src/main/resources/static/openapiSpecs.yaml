@@ -1,0 +1,167 @@
+openapi: 3.0.1
+info:
+  title: Web3j OpenApi
+  contact:
+    name: Web3 Labs
+    url: http://web3labs.com
+    email: hi@web3labs.com
+tags:
+- name: default
+  description: List existing contracts names
+- name: HelloWorld
+  description: List HelloWorld method&#39;s calls
+paths:
+  /HelloWorldApp/contracts/helloworld:
+    post:
+      tags:
+      - HelloWorld
+      summary: Deploys the HelloWorld contract
+      operationId: deploy
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionReceipt'
+  /HelloWorldApp/contracts/helloworld/{contractAddress}/Hello:
+    get:
+      tags:
+      - HelloWorld
+      summary: Execute the Hello method
+      operationId: hello
+      parameters:
+      - name: contractAddress
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitivesModelString'
+  /HelloWorldApp/contracts/helloworld/{contractAddress}/SayIt:
+    post:
+      tags:
+      - HelloWorld
+      summary: Execute the SayIt method
+      operationId: sayIt
+      parameters:
+      - name: contractAddress
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SayItParameters'
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrimitivesModelString'
+  /HelloWorldApp/contracts:
+    get:
+      operationId: findAll_1
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+components:
+  schemas:
+    Log:
+      type: object
+      properties:
+        removed:
+          type: boolean
+        logIndex:
+          type: integer
+        transactionIndex:
+          type: integer
+        transactionHash:
+          type: string
+        blockHash:
+          type: string
+        blockNumber:
+          type: integer
+        address:
+          type: string
+        data:
+          type: string
+        type:
+          type: string
+        topics:
+          type: array
+          items:
+            type: string
+        transactionIndexRaw:
+          type: string
+        blockNumberRaw:
+          type: string
+        logIndexRaw:
+          type: string
+    TransactionReceipt:
+      type: object
+      properties:
+        transactionHash:
+          type: string
+        transactionIndex:
+          type: integer
+        blockHash:
+          type: string
+        blockNumber:
+          type: integer
+        cumulativeGasUsed:
+          type: integer
+        gasUsed:
+          type: integer
+        contractAddress:
+          type: string
+        root:
+          type: string
+        status:
+          type: string
+        from:
+          type: string
+        to:
+          type: string
+        logs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Log'
+        logsBloom:
+          type: string
+        revertReason:
+          type: string
+        transactionIndexRaw:
+          type: string
+        blockNumberRaw:
+          type: string
+        cumulativeGasUsedRaw:
+          type: string
+        gasUsedRaw:
+          type: string
+        statusOK:
+          type: boolean
+    PrimitivesModelString:
+      type: object
+      properties:
+        result:
+          type: string
+    SayItParameters:
+      type: object
+      properties:
+        greeting:
+          type: string
