@@ -96,3 +96,29 @@ You should be able to run the server and see the following:
 
 ![](https://raw.githubusercontent.com/SweeXordious/Web3j-OpenAPI-demo/master/img/Server_logs.png)
 
+## Interact with the project:
+Interactions can be done using HTTP requests either through the `SwaggerUI` on `{host}:{post}/swagger-ui` or `Curls`:
+```ssh
+$ curl -X POST "http://{host}:{port}/{application name}/contracts/helloworld/{contractAddress}/SayIt" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{\"greeting\":\"Hello OpenAPI\"}"
+```
+
+To interact via Java/Kotlin:
+
+```groovy
+dependencies {
+    implementation "web3j-openapi:web3j-openapi-client:0.1.0"
+}
+```
+
+And within a client application:
+
+```
+val service = ClientService("http://localhost:8080")
+val helloWorld = ClientFactory.create(HelloWorldApi::class.java, service)
+
+val receipt = helloWorld.contracts.greeter.deploy(
+    GreeterDeployParameters("Test greeter")
+)
+
+val greeter = helloWorld.contracts.greeter.load(receipt.contractAddress)
+```
