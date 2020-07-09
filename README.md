@@ -122,3 +122,5 @@ val receipt = helloWorld.contracts.greeter.deploy(
 
 val greeter = helloWorld.contracts.greeter.load(receipt.contractAddress)
 ```
+
+For more information, check the documentation (link when released)
